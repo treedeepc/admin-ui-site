@@ -1,0 +1,213 @@
+# 标准后台设计（https://adesign.runlume.app/）
+
+Runlume 标准后台设计 · 模板与规范
+跳到主内容
+标准后台设计
+特性
+组件
+快速开始
+文档
+在线演示
+GitHub
+Runlume · 后台设计基线
+标准后台设计
+从 Runlume 平台前端提取的标准后台模板：语义
+Token、布局外壳、公共组件与标准页型。业务系统接自己的菜单、身份与接口即可。
+在线演示
+阅读文档
+查看源码
+Apache-2.0 许可
+v0.1.0
+React 19 · Vite · Tailwind
+零图表库依赖
+工作台 · 标准页型
+工作台
+客户管理
+通知中心
+设计系统
+动态菜单
+客户总数 12,480
+本月订单 386
+本月金额 ¥419,400
+正常 待处理 处理中 失败
+清源环保科技 ¥128,000 正常
+云和智能制造 ¥264,500 待处理
+为什么用这一套
+把“每个后台各写一套”的问题收口到一份可复制的基线。
+语义 Token 主题
+颜色只走语义 Token，六套预设配色 + 基础色 × 主题色自由组合，切主题业务代码零改动。
+组件按类型拆分
+九类组件页：基础控件、表单、数据展示、反馈、导航、图表、图标、主题与设置。
+三种布局外壳
+侧边导航、顶部 + 侧边、纯顶部导航；侧栏宽度、圆角、页面过渡、顶栏操作顺序都能调。
+零依赖图表
+折线、柱状、环形、迷你柱、条形、热力、雷达、漏斗、甘特全部自绘
+SVG，跟随语义色与深色模式。
+菜单与权限
+菜单可来自后台接口：多层级、外链与打开方式、权限码过滤；路由守卫落 403，按钮用 Can
+隐藏或置灰。
+中英双语与无障碍
+语言包单一入口，中英结构由类型强制对齐；键盘可达、焦点管理、高对比、色弱与减少动效。
+标准页型
+工作台、列表、详情、设置、通知中心、登录注册与找回密码，页面零件统一复用。
+命令面板
+⌘K 呼出全文搜索：匹配菜单与当前页已渲染内容，支持拼音、路径与键盘操作。
+文档站与 AI 友好
+VitePress 文档站（构建检查死链）+ pnpm check 一把梭自证，AGENTS.md
+与架构决策随代码维护。
+组件一览
+侧栏「设计系统」下按类型拆分，每个控件都能在应用里直接交互。
+基础控件
+按钮 / 输入 / 标签 / 进度
+表单与选择
+组合框 / 级联 / 多选 / 上传
+数据展示
+表格 / 树 / 表格树 / 分页
+反馈与浮层
+弹窗 / 抽屉 / 提示 / 状态
+导航与流程
+面包屑 / 页签 / 步骤条
+指标与图表
+折线 / 雷达 / 漏斗 / 甘特
+图标
+lucide 全量，点击复制
+主题与设置
+配色 / 通知 / 无障碍
+快速开始
+可复制完整模板，也可安装
+@runlume/admin-ui 0.2.4
+按组件接入。
+终端
+pnpm add @runlume/admin-ui
+# 或运行完整模板
+pnpm install
+pnpm dev # 应用 http://localhost:3200
+pnpm docs:dev # 文档 http://localhost:3210
+pnpm check # 格式 + 类型 + lint + 单测 + 构建
+复制目录 到业务仓库，改 package.json 的 name。
+换菜单 ： src/app/navigation.ts ，或接后台菜单接口。
+换身份 ： src/app/session.ts 的会话与权限码。
+接接口 ：替换 pages/sample-data.ts ，三态用 Loading / Empty /
+Error。
+换文案与品牌 ： src/lib/i18n.ts 与 public/brand/ 。
+Apache-2.0 License · Copyright 2026 Runlume
+runlume.app
+GitHub
+开源协议
+
+---
+
+# Admin Design（https://adesign.runlume.app/en.html）
+
+Runlume Admin Design | semantic tokens, shells, components, standard pages
+Skip to content
+Admin Design
+Features
+Components
+Quick start
+Docs
+Live demo
+GitHub
+Runlume · admin design baseline
+Admin Design
+The standard admin template extracted from the Runlume platform frontend: semantic
+tokens, app shells, shared components and standard pages. Plug in your own menu,
+identity and APIs.
+Live demo
+Read the docs
+View source
+Apache-2.0 licensed
+v0.1.0
+React 19 · Vite · Tailwind
+No chart library
+Dashboard · standard page
+Dashboard
+Customers
+Notifications
+Design system
+Dynamic menu
+Customers 12,480
+Orders (month) 386
+Revenue (month) ¥419,400
+Active Pending Processing Failed
+Qingyuan Enviro ¥128,000 Active
+Yunhe Intelligent ¥264,500 Pending
+Why this template
+One copyable baseline instead of every admin inventing its own buttons and tables.
+Semantic token theming
+Color only through semantic tokens: six presets plus base × theme color. Switching
+themes never touches product code.
+Components by category
+Nine galleries: basic controls, forms, data display, feedback, navigation, charts,
+icons, theming and settings.
+Three layout modes
+Sidebar, top + sidebar, and top-only navigation; sidebar width, radius, transitions
+and header action order are adjustable.
+Charts with no dependency
+Line, column, donut, mini bars, bar list, heatmap, radar, funnel and gantt are
+hand-drawn SVG that follow semantic colors and dark mode.
+Menus and permissions
+Menus can come from the backend: nesting, external links with an open mode, permission
+filtering; route guards fall back to 403 and buttons hide or disable through Can.
+Bilingual and accessible
+One language entry point with type-enforced parity; keyboard reachable, managed focus,
+high contrast, color-weak and reduced motion.
+Standard pages
+Dashboard, list, detail, settings, notification centre,
+sign-in/register/forgot-password — page parts are shared.
+Command palette
+⌘K searches menus and the content already rendered on the current page, with pinyin,
+path and full keyboard support.
+Docs site and AI friendly
+A VitePress docs site (with dead-link checks) plus one-command
+pnpm check ; AGENTS.md and decisions live with the code.
+Component gallery
+Grouped under “Design system” in the sidebar; every control is interactive in the app.
+Basic controls
+button / input / tag / progress
+Forms & pickers
+combobox / cascader / multi-select / upload
+Data display
+table / tree / tree table / pager
+Feedback & overlays
+dialog / sheet / toast / states
+Navigation
+breadcrumb / tabs / steps
+Metrics & charts
+line / radar / funnel / gantt
+Icons
+full lucide set, click to copy
+Theme & settings
+palette / notifications / a11y
+Quick start
+Copy the complete template or install
+@runlume/admin-ui 0.2.4
+for component-level adoption.
+Terminal
+pnpm add @runlume/admin-ui
+# Or run the complete template
+pnpm install
+pnpm dev # app on http://localhost:3200
+pnpm docs:dev # docs on http://localhost:3210
+pnpm check # format + types + lint + tests + build
+Copy the directory into your product repo and rename package.json .
+Swap the menu in src/app/navigation.ts , or wire the backend menu
+API.
+Swap identity : the session and permission codes in
+src/app/session.ts .
+Wire APIs : replace pages/sample-data.ts ; keep Loading / Empty /
+Error.
+Swap copy and brand : src/lib/i18n.ts and
+public/brand/ .
+Apache-2.0 License · Copyright 2026 Runlume
+runlume.app
+GitHub
+License
+
+---
+
+# 其他入口
+
+- 文档站：https://adoc.runlume.app
+- 在线演示：https://ago.runlume.app
+- 源码（Apache-2.0）：https://github.com/runlume/admin-design

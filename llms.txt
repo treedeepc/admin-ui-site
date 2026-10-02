@@ -1,0 +1,20 @@
+# Runlume 标准后台设计
+
+> 从 Runlume 平台前端提取的标准后台模板：语义 Token、三种布局外壳、九类组件页、标准页型与零依赖 SVG 图表。Apache-2.0 许可，业务系统可整份复制。
+
+## 入口
+
+- [宣传页](https://adesign.runlume.app/)：项目说明与快速开始（本页）
+- [English landing](https://adesign.runlume.app/en.html)
+- [文档站](https://adoc.runlume.app)：组件说明、工程约定、动态菜单与前端权限
+- [在线演示](https://ago.runlume.app)：两个测试账号，权限不同
+- [源码](https://github.com/runlume/admin-design)：Apache-2.0 许可
+
+## Markdown
+
+- [中文页](https://adesign.runlume.app/index.md)
+- [English page](https://adesign.runlume.app/en.md)
+
+## 全文
+
+- [llms-full.txt](https://adesign.runlume.app/llms-full.txt)：宣传页全文纯文本
